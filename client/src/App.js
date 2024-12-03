@@ -15,12 +15,12 @@ function App() {
   //   )
   // }, [])
   return (
-    <>
+    <div className='app-body'>
     <NavigationBar/>
     <div className="content-body">
     <Hero />
     </div>
-    </>
+    </div>
   )
 }
 
