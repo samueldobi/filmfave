@@ -13,6 +13,7 @@ code {
 } */
  :root{
   --grey: #ECEBDE;
+  --skyblue: #D4EBF8;
  }
 .content-body{
   transform: translateY(-4rem);
@@ -28,11 +29,16 @@ code {
   z-index: 1000;
   transform: translateY(4rem);
   border-radius:25px;
-  background-color: #D4EBF8;
+  background-color: var(--skyblue);
 }
-/* .hero-section{
-  width: 100%;
-} */
- .min-vh-100{
-  min-height: 100vh;
- }
+.hero-body{
+min-height: 100vh;
+}
+.movie-btn{
+  border-radius: 25px;
+  background-color: var(--skyblue);
+}
+.movie-btn:hover{
+  background-color: var(--skyblue);
+  transform: scale(1.1);
+}
