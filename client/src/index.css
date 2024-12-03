@@ -38,7 +38,13 @@ min-height: 100vh;
   border-radius: 25px;
   background-color: var(--skyblue);
 }
-.movie-btn:hover{
+/* .movie-btn:hover{
   background-color: var(--skyblue);
   transform: scale(1.1);
+} */
+.movie-btn:hover,
+.movie-btn:focus,
+.movie-btn:active,
+.movie-btn:focus:active{
+  background-color: var(--skyblue);
 }

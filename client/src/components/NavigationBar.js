@@ -13,12 +13,12 @@ function NavigationBar() {
           <Nav className="ms-auto ">
             <Nav.Link href="#home">Top Movies</Nav.Link>
             <Nav.Link href="#link">Top Actors</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Genres" id="basic-nav-dropdown">
               <NavDropdown.Item href="">Action</NavDropdown.Item>
               <NavDropdown.Item href="">
-                Another action
+                Comedy
               </NavDropdown.Item>
-              <NavDropdown.Item href="">Something</NavDropdown.Item>
+              <NavDropdown.Item href="">Romance</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="">
                 Separated link
