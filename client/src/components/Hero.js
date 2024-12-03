@@ -5,8 +5,8 @@ const Hero = () => {
     <div className='hero-section'>
         <div className="container  hero-body">
             <div className="row">
-                <div className="">hi</div>
-                <div className="">hi</div>
+                <div className="">Your Personalized Movie Guide</div>
+                <div className="">FilmFave is your go-to for movie recommendations. Tell us what you like, and we'll suggest films you'll love.</div>
             </div>
         </div>
     </div>

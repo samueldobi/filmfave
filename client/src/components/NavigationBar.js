@@ -3,14 +3,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function Basic() {
+function NavigationBar() {
   return (
     <Navbar expand="lg" className=" navbar-body mx-auto ">
       <Container>
         <Navbar.Brand href="#home" className='fw-bold'>Filmfave</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto ">
+          <Nav className="ms-auto ">
             <Nav.Link href="#home">Top Movies</Nav.Link>
             <Nav.Link href="#link">Top Actors</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -31,4 +31,4 @@ function Basic() {
   );
 }
 
-export default Basic;
+export default NavigationBar;
