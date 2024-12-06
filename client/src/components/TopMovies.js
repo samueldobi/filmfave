@@ -2,7 +2,10 @@ import React from 'react'
 
 const TopMovies = () => {
   return (
-    <div>TopMovies</div>
+    <div className='top-movies'>
+        <p className='text-light'>hello boss</p>
+        <p className='text-light'>lorem1000</p>
+    </div>
   )
 }
 

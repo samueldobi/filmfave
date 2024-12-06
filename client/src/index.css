@@ -47,3 +47,12 @@ min-height: 100vh;
 .movie-btn:focus:active{
   background-color: var(--skyblue);
 }
+.nav-links{
+  text-decoration: none;
+  color: inherit;
+}
+/* TOP MOVIES STYLING */
+.top-movies{
+  height: 100vh;
+}
+/* TOP MOVIES STYLING */
