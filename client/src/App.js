@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom/cjs/react-router-dom.min";
 import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
 
@@ -15,12 +16,16 @@ function App() {
   //   )
   // }, [])
   return (
+    <Router>
     <div className='app-body'>
     <NavigationBar/>
     <div className="content-body">
-    <Hero />
+    <Route>
+      <Hero />
+    </Route>
     </div>
     </div>
+    </Router>
   )
 }
 
