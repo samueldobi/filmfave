@@ -18,9 +18,9 @@
   align-items: center;
 } */
 .navbar-body{
-  width:500px;
+  width:50vw;
   z-index: 1000;
-  transform: translateY(4rem);
+  transform: translateY(3rem);
   border-radius:25px;
   background-color: var(--skyblue);
 }
@@ -43,5 +43,19 @@ min-height: 100vh;
 }
 /* TOP MOVIES STYLING */
 /* .top-movies{
+  z-index: 100;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 } */
 /* TOP MOVIES STYLING */
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  .navbar-body{
+    width:90vw;
+    transform: translateY(0.5rem);
+  }
+}

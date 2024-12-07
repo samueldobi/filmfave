@@ -1,21 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
 import TopMovies from './components/TopMovies';
 
 function App() {
-  // const [backendData, setBackendData] =  useState([{}]);
-
-  // useEffect(()=>{
-  //   fetch("/api").then(
-  //     response => response.json()
-  //   ).then(
-  //     data =>{
-  //       setBackendData(data)
-  //     }
-  //   )
-  // }, [])
   return (
     <Router>
     <div className='app-body'>
