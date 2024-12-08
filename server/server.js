@@ -7,7 +7,7 @@ const axios =  require('axios');
 //     res.json({users:["userOne", "userTwo", "userThree"]});
     
 // })
-// Get top movies data from TMDB API 
+// Get top movies data from TMDB API  
 app.get("/api/topmovies", async (req, res) => {
   try {
       const response = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=1ae5981ff7d4f8f7646cc506eebc1c91');
