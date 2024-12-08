@@ -15,7 +15,7 @@ app.get("/api/topmovies", async (req, res) => {
 });
 
 // Get the top series data from TMDB API
-app.get("api/topseries", async(req, res) =>{
+app.get("/api/topseries", async(req, res) =>{
   try{
     const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`);
     res.json(response.data);

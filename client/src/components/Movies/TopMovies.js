@@ -6,7 +6,6 @@ import {Container,Row, Col, Pagination} from 'react-bootstrap';
 
 const TopMovies = () => {
   const [movies, setMovies] = useState([]);
-
     const [currentPage, setCurrentPage] =  useState(1);
     const moviesPerPage = 3;
     // Calculate the total number of pages
