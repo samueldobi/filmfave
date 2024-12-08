@@ -1,6 +1,8 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import MovieCard from './Movies/MovieCard';
+import {Container,Row, Col} from 'react-bootstrap';
+
 
 const TopMovies = () => {
     // const [backendData, setBackendData] =  useState([]);
@@ -21,14 +23,15 @@ const TopMovies = () => {
     }, [])
   return (
     <div className='top-movies m-3 p-3'>
-      {/* Card holder for the movies */}
-       { 
-        movies.map((movie,index) =>{
-          return <MovieCard key={index} {...movie}/>
-        })
-       }
-      {/* Card holder for the movies */}
-      <p className='text-light'></p>
+        <Container className='p-3'>
+        <Row>
+          {movies.map((movie, index) => (
+            <Col key={index} xs={12} md={4} lg={4} className="mb-4">
+              <MovieCard {...movie} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   )
 }
