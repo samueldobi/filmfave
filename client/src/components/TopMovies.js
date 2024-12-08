@@ -16,7 +16,7 @@ const TopMovies = () => {
       )
     }, [])
   return (
-    <div className='top-movies'>
+    <div className='top-movies m-3 p-3'>
         {backendData.length === 0 ?(
            <p className='text-light'>It is undefined..</p>
         ):( 
