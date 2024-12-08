@@ -11,7 +11,7 @@ const TopMovies = () => {
       ).then(
         data =>{
             console.log(data)
-          setBackendData(data.names)
+          setBackendData(data)
         }
       )
     }, [])
