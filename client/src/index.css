@@ -2,17 +2,20 @@
   --grey: #ECEBDE;
   --skyblue: #D4EBF8;
  }
+.body{
+  overflow: hidden;
+}
 .app-body{
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100%;
   background: url(../public/images/extraction-2.jpg) top center no-repeat;
   background-size: cover;
   background-position: center;
 }
 /* .content-body{
   flex: 1;
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-content: center;
   align-items: center;

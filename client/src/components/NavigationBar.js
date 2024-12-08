@@ -21,7 +21,11 @@ function NavigationBar() {
                   Top Movies
               </Link>
               </Nav.Link>
-            <Nav.Link href="#link">Top Actors</Nav.Link>
+            <Nav.Link >
+              <Link to ="/topseries" className='nav-links'>
+                Top Series
+              </Link>
+              </Nav.Link>
             <NavDropdown title="Genres" id="basic-nav-dropdown">
               <NavDropdown.Item href="">Action</NavDropdown.Item>
               <NavDropdown.Item href="">

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import MovieCard from './Movies/MovieCard';
+import MovieCard from './MovieCard';
 import {Container,Row, Col, Pagination} from 'react-bootstrap';
 
 
@@ -43,11 +43,11 @@ const TopMovies = () => {
             </Col>
           ))}
         </Row>
-        <Pagination className="justify-content-center">
-          <Pagination.First onClick={() => handlePageChange(1)} disabled={currentPage === 1} />
+        <Pagination className="justify-content-center m-3 p-3 paginate-div">
+          <Pagination.First  onClick={() => handlePageChange(1)} disabled={currentPage === 1} />
           <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
           {[...Array(totalPages).keys()].map(pageNumber => (
-            <Pagination.Item
+            <Pagination.Item 
               key={pageNumber + 1}
               active={pageNumber + 1 === currentPage}
               onClick={() => handlePageChange(pageNumber + 1)}

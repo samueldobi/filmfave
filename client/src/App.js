@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
-import TopMovies from './components/TopMovies';
+import TopMovies from './components/Movies/TopMovies';
+import TopSeries from './components/Series/TopSeries';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
           <Route path='/' element = {<Hero /> }/>
           <Route path = '/topmovies'  element = {<TopMovies/>} />
+          <Route path = '/topseries'  element = {<TopSeries/>} />
       </Routes>
  
     </div>
