@@ -21,7 +21,7 @@
   align-items: center;
 } */
 .navbar-body{
-  width:50vw;
+  width:70vw;
   z-index: 1000;
   transform: translateY(3rem);
   border-radius:25px;

@@ -17,13 +17,25 @@ app.get("/api/topmovies", async (req, res) => {
 // Get the top series data from TMDB API
 app.get("/api/topseries", async(req, res) =>{
   try{
-    const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`);
+    const response = await axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}`);
     res.json(response.data);
   }catch(err){
     console.log(err);
     res.status(500).send('Internal Server Error ');
   }
 }) 
+// Get different genres of movies according to their id
+app.get("/api/genres", async (req,res)=>{
+  const action = 28;
+  const adventure = 12;
+  const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&with_genres=${genreId}`)
+  try{
+    // 
+  }catch(err){
+    console.log(err);
+    res.status(500).send('Internal Server Error');
+  }
+})
 
 const PORT = process.env.PORT || 3000;
 

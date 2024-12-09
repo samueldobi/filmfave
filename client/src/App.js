@@ -4,6 +4,7 @@ import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
 import TopMovies from './components/Movies/TopMovies';
 import TopSeries from './components/Series/TopSeries';
+import Genres from './components/Genres';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element = {<Hero /> }/>
           <Route path = '/topmovies'  element = {<TopMovies/>} />
           <Route path = '/topseries'  element = {<TopSeries/>} />
+          <Route path = '/genres'  element = {<Genres/>} />
       </Routes>
  
     </div>

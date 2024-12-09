@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link} from 'react-router-dom';
 
 function NavigationBar() {
@@ -26,7 +26,12 @@ function NavigationBar() {
                 Top Series
               </Link>
               </Nav.Link>
-            <NavDropdown title="Genres" id="basic-nav-dropdown">
+            <Nav.Link >
+              <Link to ="/genres" className='nav-links'>
+                Find By Genres
+              </Link>
+              </Nav.Link>
+            {/* <NavDropdown title="" id="basic-nav-dropdown">
               <NavDropdown.Item href="">Action</NavDropdown.Item>
               <NavDropdown.Item href="">
                 Comedy
@@ -36,7 +41,7 @@ function NavigationBar() {
               <NavDropdown.Item href="">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
