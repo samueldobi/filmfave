@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link} from 'react-router-dom';
 
 function NavigationBar() {
@@ -22,26 +22,26 @@ function NavigationBar() {
               </Link>
               </Nav.Link>
             <Nav.Link >
-              <Link to ="/topseries" className='nav-links'>
-                Top Series
-              </Link>
+              Top Series
               </Nav.Link>
-            <Nav.Link >
-              <Link to ="/genres" className='nav-links'>
-                Find By Genres
-              </Link>
-              </Nav.Link>
-            {/* <NavDropdown title="" id="basic-nav-dropdown">
+            <NavDropdown title="Genres" id="basic-nav-dropdown">
               <NavDropdown.Item href="">Action</NavDropdown.Item>
-              <NavDropdown.Item href="">
-                Comedy
-              </NavDropdown.Item>
+              <NavDropdown.Item href="">Adventure</NavDropdown.Item>
+              <NavDropdown.Item href="">Animation</NavDropdown.Item>
+              <NavDropdown.Item href="">Comedy</NavDropdown.Item>
+              <NavDropdown.Item href="">Crime</NavDropdown.Item>
+              <NavDropdown.Item href="">Drama</NavDropdown.Item>
+              <NavDropdown.Item href="">Family</NavDropdown.Item>
+              <NavDropdown.Item href="">Fantasy</NavDropdown.Item>
+              <NavDropdown.Item href="">Horror</NavDropdown.Item>
+              <NavDropdown.Item href="">Mystery</NavDropdown.Item>
               <NavDropdown.Item href="">Romance</NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Item href="">Science Fiction</NavDropdown.Item>
+              {/* <NavDropdown.Divider />
               <NavDropdown.Item href="">
                 Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
+              </NavDropdown.Item> */}
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -26,11 +26,9 @@ app.get("/api/topseries", async(req, res) =>{
 }) 
 // Get different genres of movies according to their id
 app.get("/api/genres", async (req,res)=>{
-  const action = 28;
-  const adventure = 12;
-  const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&with_genres=${genreId}`)
   try{
-    // 
+    const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`)
+    res.json(response.data); 
   }catch(err){
     console.log(err);
     res.status(500).send('Internal Server Error');

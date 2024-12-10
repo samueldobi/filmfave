@@ -10,7 +10,7 @@ const MovieCard = ({title, overview, release_date, backdrop_path}) => {
   return (
     <div>
                 <Card className='movie-card'>
-                    <Card.Img variant="top" src={getPosterUrl(backdrop_path)} className='rounded' />
+                    <Card.Img variant="top" src={getPosterUrl(backdrop_path)} className='rounded ' />
                     <Card.Body>
                         <Card.Title className='text-light'>{title}</Card.Title>
                         <Card.Text className='text-light'>
