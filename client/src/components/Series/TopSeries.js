@@ -16,8 +16,9 @@ const TopSeries = () => {
         currentPage * seriesPerPage
     )
     // Handle Page Change
-    const handlePageChange = (pageNumber) =>{
+    const handlePageChange = (pageNumber) =>{ 
         setCurrentPage(pageNumber);
+        window.scrollTo(0, 0);
     }
 
     useEffect(()=>{

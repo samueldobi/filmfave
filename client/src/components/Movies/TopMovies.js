@@ -18,6 +18,7 @@ const TopMovies = () => {
     // Handle Page Change
     const handlePageChange = (pageNumber) =>{
       setCurrentPage(pageNumber);
+      window.scrollTo(0, 0);
     }
 
     // Fetch the api data
@@ -31,6 +32,7 @@ const TopMovies = () => {
           setMovies(data.results)
         }
       )
+      window.scrollTo(0, 0);
     }, [])
   return (
     <div className='top-movies m-3 p-3'>
@@ -43,7 +45,7 @@ const TopMovies = () => {
           ))}
         </Row>
         <Pagination className="justify-content-center m-3 p-3 paginate-div">
-          <Pagination.First  onClick={() => handlePageChange(1)} disabled={currentPage === 1} />
+          <Pagination.First  onClick={() => handlePageChange(1)} disabled={currentPage === 1}  />
           <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
           {[...Array(totalPages).keys()].map(pageNumber => (
             <Pagination.Item 

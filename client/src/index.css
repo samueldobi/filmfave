@@ -63,7 +63,7 @@ min-height: 100vh;
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
 .movie-card img{
-  height:400px;
+  height:fit-content;
 }
 /* Movie Card styling */
 
