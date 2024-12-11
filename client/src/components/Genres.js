@@ -8,7 +8,7 @@ const Genres = () => {
 
     useEffect(()=>{
         const genreName = 10749;
-        fetch("/api/genres/${genreName}")
+        fetch("/api/genres/")
         .then(
             response => response.json
         )
@@ -19,7 +19,7 @@ const Genres = () => {
         )
     })
   return (
-    <div className='movie-page'>
+    <div className=''>
         <h1 className="text-light text-center fw-bold m-3 p-3">
             Page Name :{genreName}
         </h1>
