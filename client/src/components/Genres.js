@@ -3,21 +3,21 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Genres = () => {
-    const {genreName} = useParams();
+    const {genreName, genreId} = useParams();
     const [movies, setMovies] = useState([]);
 
     useEffect(()=>{
-        const genreName = 10749;
-        fetch("/api/genres/")
+        
+        fetch("/api/genres/${genreId}")
         .then(
-            response => response.json
+            response => response.json()
         )
         .then(
             data =>{
-                console.log(data)
+                console.log(data.results)
             }
         )
-    })
+    },[genreId])
   return (
     <div className=''>
         <h1 className="text-light text-center fw-bold m-3 p-3">

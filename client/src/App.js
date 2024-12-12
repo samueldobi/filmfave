@@ -16,7 +16,7 @@ function App() {
           <Route path='/' element = {<Hero /> }/>
           <Route path = '/topmovies'  element = {<TopMovies/>} />
           <Route path = '/topseries'  element = {<TopSeries/>} />
-          <Route path = '/genres/:genreName'  element = {<Genres/>} />
+          <Route path = '/genres/:genreName/:genreId'  element = {<Genres/>} />
       </Routes>
  
     </div>
