@@ -42,7 +42,7 @@ const Genres = () => {
     },[genreId])
   return (
     <div className='m-3 p-3'>
-        <h1 className="text-light text-center fw-bold m-3 p-3">
+        <h1 className="text-light text-center text-capitalize fw-bold m-3 p-3 ">
             {genreName}
         </h1>
         <Container>

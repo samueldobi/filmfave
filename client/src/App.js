@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import TopMovies from './components/Movies/TopMovies';
 import TopSeries from './components/Series/TopSeries';
 import Genres from './Genres/Genres';
+import MovieFilter from './components/MovieFilter';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/' element = {<Hero /> }/>
           <Route path = '/topmovies'  element = {<TopMovies/>} />
           <Route path = '/topseries'  element = {<TopSeries/>} />
+          <Route path = '/moviefilter'  element = {<MovieFilter/>} />
           <Route path = '/genres/:genreName/:genreId'  element = {<Genres/>} />
       </Routes>
  

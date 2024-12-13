@@ -1,8 +1,7 @@
 import React from 'react';
 import MovieBtn from './MovieBtn';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {Container,Row, Col} from 'react-bootstrap';
+
 
 const Hero = () => {
   return (
