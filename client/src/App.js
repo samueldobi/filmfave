@@ -4,7 +4,7 @@ import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
 import TopMovies from './components/Movies/TopMovies';
 import TopSeries from './components/Series/TopSeries';
-import Genres from './components/Genres';
+import Genres from './Genres/Genres';
 
 function App() {
   return (
