@@ -35,21 +35,21 @@ app.get("/api/topseries", async(req, res) =>{
 //     res.status(500).send('Internal Server Error');
 //   }
 // })
-app.get("api/genres", async (req, res) =>{
-  const {genreId} = req.params;
-  try{
-    const response = await axios.get(`https://api.themoviedb.org/3/discover/movie`,{
-      params: {
-         apiKey: '1ae5981ff7d4f8f7646cc506eebc1c91',
-         with_genres: genreId
-      }
-  })
-    res.json({results: response.data.results});
-  }catch (error){
-    console.log(error);
-    res.status(500).send('Internal Server Error ');
-  }
-})
+// app.get("/api/genres/:genreId", async (req, res) =>{
+//   const {genreId} = req.params;
+//   try{
+//     const response = await axios.get(`https://api.themoviedb.org/3/discover/movie`,{
+//       params: {
+//          apiKey: '1ae5981ff7d4f8f7646cc506eebc1c91',
+//          with_genres: genreId
+//       }
+//   })
+//     res.json({results: response.data.results});
+//   }catch (error){
+//     console.log(error);
+//     res.status(500).send('Internal Server Error ');
+//   }
+// })  
 
 const PORT = process.env.PORT || 3000;
 

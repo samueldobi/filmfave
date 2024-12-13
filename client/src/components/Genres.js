@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const Genres = () => {
     const {genreName, genreId} = useParams();
@@ -8,7 +9,7 @@ const Genres = () => {
 
     useEffect(()=>{
         
-        fetch("/api/genres/${genreId}")
+        axios.get(`/api/genres/${genreId}`)
         .then(
             response => response.json()
         )
