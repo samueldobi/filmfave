@@ -5,6 +5,8 @@ const getPosterUrl = (backdrop_path) =>{
     return `https://media.themoviedb.org/t/p/w220_and_h330_face/${backdrop_path}`
 }
 const SeriesCard = ({name, overview, first_air_date, backdrop_path}) => {
+  const overviewArray = overview.split("");
+  const overCopy = overviewArray.splice(0, 200);
   return (
     <div>
          <Card className='movie-card'>
@@ -12,7 +14,7 @@ const SeriesCard = ({name, overview, first_air_date, backdrop_path}) => {
                     <Card.Body>
                         <Card.Title className='text-light'>{name}</Card.Title>
                         <Card.Text className='text-light'>
-                        {overview}
+                        {overCopy}........
                         </Card.Text>
                         <Card.Text className='text-light'>
                         <p > release date: <span className='fw-bold'>{first_air_date}</span></p>
