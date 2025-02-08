@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import TopMovies from './components/Movies/TopMovies';
 import TopSeries from './components/Series/TopSeries';
 import Genres from './Genres/Genres';
-import MovieFilter from './components/MovieFilter';
+import MovieFilter from './components/Moviefilter/MovieFilter';
 
 function App() {
   return (
