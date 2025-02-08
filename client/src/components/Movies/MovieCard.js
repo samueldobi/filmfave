@@ -7,6 +7,9 @@ const getPosterUrl = (backdrop_path) =>{
 }
 // This is the movie card main component
 const MovieCard = ({title, overview, release_date, backdrop_path}) => {
+  const overviewArray = overview.split("");
+  const overCopy = overviewArray.splice(0, 200);
+
   return (
     <div>
                 <Card className='movie-card'>
@@ -14,16 +17,16 @@ const MovieCard = ({title, overview, release_date, backdrop_path}) => {
                     <Card.Body>
                         <Card.Title className='text-light'>{title}</Card.Title>
                         <Card.Text className='text-light'>
-                        {overview}
+                        {overCopy}........
                         </Card.Text>
                         <Card.Text className='text-light'>
                         <p > release date: <span className='fw-bold'>{release_date}</span></p>
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                
     </div>
   )
 }
+
 
 export default MovieCard

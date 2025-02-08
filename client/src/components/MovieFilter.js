@@ -1,13 +1,42 @@
 import React from 'react';
 import {Container,Row, Col, Card} from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import DatePicker from 'react-datepicker';
-import { Form, InputGroup } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import 'react-datepicker/dist/react-datepicker.css';
+import axios from 'axios';
+
 
 const MovieFilter = () => {
-  const [dateRange, setDateRange] = useState([null, null]);
-  const [startYear, endYear] = dateRange;
+  // const [dateRange, setDateRange] = useState([null, null]);
+  // const [startYear, endYear] = dateRange;
+  const [filters, setFilters] = useState({
+    date:'',
+    genres: '',
+    region: '',
+    rating: '',
+    language: '',
+    keywords: ''
+  })
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFilters({ ...filters, [name]: value });
+  };
+    const { date, genres, region, rating, language, keywords } = filters;
+    const fetchData = async()=>{
+      const response = await  axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=1ae5981ff7d4f8f7646cc506eebc1c91&primary_release_year=${date}&with_genres=${genres}&region=${region}&vote_average.gte=${rating}&with_original_language=${language}&with_keywords=${keywords}`)
+      try {
+        const filterData = response.data.results;
+        setFilters(filterData)
+        console.log(filterData)
+      } catch (error) {
+        console.log('Error getting data', error)
+      }
+    }
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      fetchData();
+    };
   return (
     <div>
      <p className="text-light  text-capitalize text-center m-3 p-3">
@@ -22,7 +51,7 @@ const MovieFilter = () => {
                         <Card.Title className='text-dark'>Year of release </Card.Title>
                             <Form.Group>
                   <Form.Label className=''>Select Year Range</Form.Label>
-                      <DatePicker
+                      {/* <DatePicker
                         selectsRange
                         minDate={new Date('1900-01-01')}
                         maxDate={new Date()}
@@ -36,7 +65,7 @@ const MovieFilter = () => {
                         }}
                         placeholderText="Select Year Range"
                         className="form-control"
-                      />
+                      /> */}
                 </Form.Group>
                     </Card.Body>
                 </Card>
@@ -56,27 +85,27 @@ const MovieFilter = () => {
         <form >
         <div>
           <label>Date:</label>
-          <input type="number" name="date" value="" />
+          <input type="number" name="date" value={filters.date}  onChange={handleChange}/>
         </div>
         <div>
           <label>Genres:</label>
-          <input type="text" name="genres" value=""/>
+          <input type="text" name="genres" value={filters.genres} onChange={handleChange} />
         </div>
         <div>
           <label>Region:</label>
-          <input type="text" name="region" value=""/>
+          <input type="text" name="region" value={filters.region} onChange={handleChange}/>
         </div>
         <div>
           <label>Rating:</label>
-          <input type="number" step="0.1" name="rating" value="" />
+          <input type="number" step="0.1" name="rating" value={filters.rating} onChange={handleChange}/>
         </div>
         <div>
           <label>Language:</label>
-          <input type="text" name="language" value="" />
+          <input type="text" name="language" value={filters.language} onChange={handleChange}/>
         </div>
         <div>
           <label>Keywords:</label>
-          <input type="text" name="keywords" value="" />
+          <input type="text" name="keywords" value={filters.keywords} />
         </div>
         <button type="submit">Filter Movies</button>
       </form>

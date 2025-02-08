@@ -4,6 +4,7 @@ import MovieCard from './MovieCard';
 import {Container,Row, Col, Pagination} from 'react-bootstrap';
 
 
+
 const TopMovies = () => {
   const [movies, setMovies] = useState([]);
   // Pagination
@@ -35,7 +36,9 @@ const TopMovies = () => {
       )
       window.scrollTo(0, 0);
     }, [])
+
   return (
+    
     <div className='top-movies m-3 p-3'>
         <Container className='p-3'>
         <Row>
