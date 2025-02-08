@@ -70,23 +70,22 @@ const MovieFilter = () => {
         onChange={setSelectedYears}
       />
       
-      <h3>Results:</h3>
+      <h3 className='text-white '>Results:</h3>
       <Container>
             <Row>
-            {movies.map((movie, index) => (
+            { movies && movies.length > 0 ?(
+               movies.map((movie, index) => (
                 <Col key={index} xs={12} md={4} lg={4} className="mb-4">
                 <MovieFilterCard {...movie} />
                 </Col>
-               ))}
+               ))
+            ) :(
+              <p className="text-white">No results for this input, try a different combination</p>
+            )}
+           
             </Row>
       </Container>
-      {/* <ul>
-        
-        {movies.map((movie) => (
-          <li key={movie.id} className='text-light'>{movie.title} </li>
-        ))} 
-        
-      </ul> */}
+
    
     </div>
   )

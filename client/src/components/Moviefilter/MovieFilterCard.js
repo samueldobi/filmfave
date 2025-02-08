@@ -11,11 +11,11 @@ const MovieFilterCard = ({title, overview, release_date, backdrop_path}) => {
         <Card className='movie-filter-card'>
             <Card.Img variant="top" src={getPosterUrl(backdrop_path)} className='rounded ' />
             <Card.Body>
-                <Card.Title className='text-light'>{title}</Card.Title>
-                <Card.Text className='text-light'>
+                <Card.Title className=''>{title}</Card.Title>
+                <Card.Text className=''>
                 {overview}
                 </Card.Text>
-                <Card.Text className='text-light'>
+                <Card.Text className=''>
                 <p > release date: <span className='fw-bold'>{release_date}</span></p>
                 </Card.Text>
             </Card.Body>
