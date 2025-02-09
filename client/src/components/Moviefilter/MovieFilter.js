@@ -8,8 +8,19 @@ import MovieFilterCard from './MovieFilterCard';
 
 const genres = [
   {value : 28, label: "Action"},
+  {value : 12, label: "Adventure"},
+  {value : 16, label: "Animation"},
   {value : 35, label: "Comedy"},
-  {value : 10749, label: "Romance"}
+  {value : 80, label: "Crime"},
+  {value : 18, label: "Drama"},
+  {value : 10751, label: "Family"},
+  {value : 14, label: "Fantasy"},
+  {value : 36, label: "History"},
+  {value : 9648, label: "Mystery"},
+  {value : 10749, label: "Romance"},
+  {value : 878, label: "Science Fiction"},
+  {value : 53, label: "Thriller "},
+  {value : 10752, label: "War "},
 ];
 const keywords = [
   { value: 818, label: "Love" },
@@ -35,7 +46,9 @@ const MovieFilter = () => {
       const yearQuery = selectedYears.map((y) => y.value).join("|");
       const fetchData = async () =>{
         try {
-          const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=1ae5981ff7d4f8f7646cc506eebc1c91&with_genres=${genreQuery}&with_keywords=${keywordQuery}&primary_release_year=${yearQuery}`)
+           // apikey
+          const apiKey = process.env.REACT_APP_API_KEY;
+          const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreQuery}&with_keywords=${keywordQuery}&primary_release_year=${yearQuery}`)
           // const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=1ae5981ff7d4f8f7646cc506eebc1c91&primary_release_year=2017&with_genres=35`)
           const movieData = response.data.results
           console.log(movieData)

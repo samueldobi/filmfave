@@ -8,6 +8,7 @@ import Genres from './Genres/Genres';
 import MovieFilter from './components/Moviefilter/MovieFilter';
 
 function App() {
+  console.log(process.env.REACT_APP_API_KEY)
   return (
     <Router>
     <div className='app-body'>
