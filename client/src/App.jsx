@@ -1,14 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import NavigationBar from './components/NavigationBar';
-import Hero from './components/Hero';
-import TopMovies from './components/Movies/TopMovies';
-import TopSeries from './components/Series/TopSeries';
-import Genres from './Genres/Genres';
-import MovieFilter from './components/Moviefilter/MovieFilter';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import NavigationBar from './components/NavigationBar.jsx';
+import Hero from './components/Hero.jsx';
+import TopMovies from './components/Movies/TopMovies.jsx';
+import TopSeries from './components/Series/TopSeries.jsx';
+import Genres from './Genres/Genres.jsx';
+import MovieFilter from './components/Moviefilter/MovieFilter.jsx';
 
 function App() {
-  console.log(process.env.REACT_APP_API_KEY)
+
   return (
     <Router>
     <div className='app-body'>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import MovieCard from './MovieCard';
+import MovieCard from './MovieCard.jsx';
 import {Container,Row, Col, Pagination} from 'react-bootstrap';
 
 

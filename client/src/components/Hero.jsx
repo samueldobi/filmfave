@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieBtn from './MovieBtn';
+import MovieBtn from './MovieBtn.jsx';
 import {Container,Row, Col} from 'react-bootstrap';
 
 

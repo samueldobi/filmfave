@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import SeriesCard from './SeriesCard';
+import SeriesCard from './SeriesCard.jsx';
 import { Col, Container, Row, Pagination } from 'react-bootstrap';
 
 

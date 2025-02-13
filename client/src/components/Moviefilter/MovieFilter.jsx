@@ -3,7 +3,7 @@ import Select from "react-select";
 import {Container,Row, Col} from 'react-bootstrap';
 import { useState } from 'react';
 import axios from 'axios';
-import MovieFilterCard from './MovieFilterCard';
+import MovieFilterCard from './MovieFilterCard.jsx';
 
 
 const genres = [
@@ -47,7 +47,7 @@ const MovieFilter = () => {
       const fetchData = async () =>{
         try {
            // apikey
-          const apiKey = process.env.REACT_APP_API_KEY;
+          const apiKey = import.meta.env.VITE_API_KEY;
           const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreQuery}&with_keywords=${keywordQuery}&primary_release_year=${yearQuery}`)
           // const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=1ae5981ff7d4f8f7646cc506eebc1c91&primary_release_year=2017&with_genres=35`)
           const movieData = response.data.results

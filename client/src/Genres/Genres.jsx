@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import GenreCard from './GenreCard';
+import GenreCard from './GenreCard.jsx';
 import {Container,Row, Col, Pagination} from 'react-bootstrap';
 
 const Genres = () => {
@@ -30,7 +30,7 @@ const Genres = () => {
             const fetchData = async () => {
                 try {
                    // apikey
-                    const apiKey = process.env.REACT_APP_API_KEY;
+                    const apiKey = import.meta.env.VITE_API_KEY;
                     const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreId}`)  
                    
                     const genreList = response.data.results
