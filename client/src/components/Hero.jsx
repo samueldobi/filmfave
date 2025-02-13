@@ -11,6 +11,8 @@ const Hero = () => {
         <Col xs={12} className="text-center mb-5">
           <p className='text-light text-center fw-bold fs-1'>Your Personalized Movie Guide</p>
           <p className='text-light fs-5'>FilmFave is your go-to for movie recommendations. Tell us what you like, and we'll suggest films you'll love.</p>
+
+
         </Col>
        <Col className="text-center mt-5">
        <MovieBtn/>
