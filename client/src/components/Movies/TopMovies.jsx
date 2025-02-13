@@ -12,12 +12,12 @@ const TopMovies = () => {
     const moviesPerPage = 3;
     // Calculate the total number of pages
     const totalPages = Math.ceil(movies.length / moviesPerPage)
-    // Get the movie for the current page
+    // Get the movie for the current page 
     const currentMovies = movies.slice(
       (currentPage - 1) * moviesPerPage,
       currentPage * moviesPerPage
     )
-    // Handle Page Change
+    // Function to Handle Page Change
     const handlePageChange = (pageNumber) =>{
       setCurrentPage(pageNumber);
       window.scrollTo(0, 0);
