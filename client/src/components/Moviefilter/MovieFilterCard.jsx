@@ -7,19 +7,8 @@ const  getPosterUrl = (backdrop_path) =>{
 }
 const MovieFilterCard = ({title, overview, release_date, backdrop_path}) => {
   return (
-    <div>
-        {/* <Card className='movie-filter-card'>
-            <Card.Img variant="top" src={getPosterUrl(backdrop_path)} className='rounded ' />
-            <Card.Body>
-                <Card.Title className=''>{title}</Card.Title>
-                <Card.Text className=''>
-                {overview}
-                </Card.Text>
-                <Card.Text className=''>
-                <p > release date: <span className='fw-bold'>{release_date}</span></p>
-                </Card.Text>
-            </Card.Body>
-        </Card> */}
+    <div className='p-1 ml-4'>
+     
         <div
       href="#"
       className="flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition w-80" // Added w-80 for standard card width

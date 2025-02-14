@@ -39,10 +39,10 @@ const TopSeries = () => {
         <h1 className="text-light text-center text-capitalize fw-bold m-3 p-3 fs-1 ">
             Top Rated Series
         </h1>
-            <Row className='object-center'>
+            <Row className=''>
                 {currentSeries.map((serieList, index) =>{
 
-                    return <Col key={index} xs={12} md={4} lg={4} className="mb-4 ">
+                    return <Col key={index} xs={12} md={4} lg={4} className="mb-4 mx-auto ">
                     <SeriesCard {...serieList} />
                     </Col>
                 })}

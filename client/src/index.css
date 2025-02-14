@@ -67,6 +67,15 @@ min-height: 100vh;
   margin: 0 auto;
   padding: 10px;
 }
+/* .card-div{
+  margin: 0 auto;
+} */
+/* .filter-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+} */
 /* Movie Card styling */
 
 /* Media Queries */
