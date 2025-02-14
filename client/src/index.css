@@ -9,12 +9,15 @@
   overflow: hidden;
 }
 .app-body{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   height: 100%;
-  background: url(../public/images/extraction-2.jpg) top center no-repeat;
-  background-size: cover;
-  background-position: center;
+  /* background-image: url(/images/squared-bg.svg) top center no-repeat; */
+  background-color:#000;
+  /* background-blend-mode: lighten; */
+  /* background-size: cover; */
+  /* background-position: center;  */
+  /* @apply relative max-w-3xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center sm:items-center mx-auto size-full before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2; */
 }
 /* .content-body{
   flex: 1;
