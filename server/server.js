@@ -26,6 +26,13 @@ app.get("/api/topseries", async(req, res) =>{
     res.status(500).send('Internal Server Error ');
   }
 }) 
+// trying to fix cors issue
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 
 const PORT = process.env.PORT || 3000;
