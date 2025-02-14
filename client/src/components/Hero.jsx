@@ -10,7 +10,7 @@ const Hero = () => {
 
       <main
         id="content"
-        className="relative w-full h-screen my-5 px-4 sm:px-6 lg:px-8 flex flex-col  items-center mx-auto before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2"
+        className="relative w-full  my-5 px-4 sm:px-6 lg:px-8 flex flex-col  items-center mx-auto before:absolute before:top-0 "
       >
         <div className="text-center py-8 px-4 sm:px-6 lg:px-8">
   
