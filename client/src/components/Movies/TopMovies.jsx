@@ -44,9 +44,9 @@ const TopMovies = () => {
         <h1 className="text-light text-center text-capitalize fw-bold m-3 p-3 fs-1 ">
             Top Rated Movies
         </h1>
-        <Row>
+        <Row className='object-center'>
           {currentMovies.map((movie, index) => (
-            <Col key={index} xs={12} md={4} lg={4} className="mb-4">
+            <Col key={index} xs={12} md={4} lg={4} className="mb-4 ">
               <MovieCard {...movie} />
             </Col>
           ))}

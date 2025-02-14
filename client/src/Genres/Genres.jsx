@@ -49,9 +49,9 @@ const Genres = () => {
             {genreName}
         </h1>
         <Container>
-            <Row>
+            <Row className='object-center'>
             {currentGenres.map((genre, index) => (
-                <Col key={index} xs={12} md={4} lg={4} className="mb-4">
+                <Col key={index} xs={12} md={4} lg={4} className="mb-4 ">
                 <GenreCard {...genre} />
                 </Col>
                ))}

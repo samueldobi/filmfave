@@ -91,10 +91,10 @@ const MovieFilter = () => {
       
       <h3 className='text-white text-center text-4xl t m-2 p-2 '>Results:</h3>
       <Container>
-            <Row>
+            <Row className='object-center'>
             { movies && movies.length > 0 ?(
                movies.map((movie, index) => (
-                <Col key={index} xs={12} md={4} lg={4} className="mb-4">
+                <Col key={index} xs={12} md={4} lg={4} className="mb-4 ">
                 <MovieFilterCard {...movie} />
                 </Col>
                ))
