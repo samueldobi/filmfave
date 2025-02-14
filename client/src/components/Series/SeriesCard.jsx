@@ -19,7 +19,7 @@ const SeriesCard = ({name, overview, first_air_date, backdrop_path}) => {
         src={getPosterUrl(backdrop_path)}
         alt="Series Image"
       />
-      <div className="p-4 md:p-5 overflow-y-auto max-h-32 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+      <div className="p-4 md:p-5 overflow-y-auto max-h-32 no-scrollbar">
         <h3 className="text-lg font-bold text-gray-800">{name}</h3>
         <p className="mt-1 text-gray-500">
             {overview}
