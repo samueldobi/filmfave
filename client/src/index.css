@@ -9,15 +9,17 @@
   overflow: hidden;
 }
 .app-body{
-  /* display: flex;
-  flex-direction: column;
-  /* background-image: url(/images/squared-bg.svg) top center no-repeat; */
+
   height: 100%;
-  background-color:#000;
-  /* background-blend-mode: lighten; */
-  /* background-size: cover; */
+  background: #000428;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background-image: url(/images/squared-bg.svg) top center no-repeat; */
+
+
   /* background-position: center;  */
   /* @apply relative max-w-3xl px-4 sm:px-6 lg:px-8 flex flex-col justify-center sm:items-center mx-auto size-full before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples-dark/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:size-full before:-z-[1] before:transform before:-translate-x-1/2; */
+  /* bg-gradient-to-tr from-blue-600 to-purple-400  */
 }
 /* .content-body{
   flex: 1;
@@ -26,6 +28,17 @@
   justify-content: center;
   align-items: center;
 } */
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
+}
 .navbar-body{
   width:70vw;
   z-index: 1000;
@@ -37,14 +50,6 @@
 min-height: 100vh;
 }
 .movie-btn{
-  border-radius: 25px;
-  background-color: var(--skyblue);
-}
-.movie-btn:hover,
-.movie-btn:focus,
-.movie-btn:active,
-.movie-btn:focus:active{
-  background-color: var(--skyblue);
 }
 .nav-links{
   text-decoration: none;
