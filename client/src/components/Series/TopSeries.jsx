@@ -34,8 +34,8 @@ const TopSeries = () => {
            )
     }, [])
   return (
-    <div className=' m-3 p-3'>
-        <Container>
+    <div className=''>
+        <Container className='p-3'>
             <Row>
                 {currentSeries.map((serieList, index) =>{
 

@@ -39,7 +39,7 @@ const TopMovies = () => {
 
   return (
     
-    <div className='top-movies m-3 p-3'>
+    <div className='top-movies '>
         <Container className='p-3'>
         <Row>
           {currentMovies.map((movie, index) => (

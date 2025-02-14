@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router>
-    <div className='app-body'>
+    <div className='app-body ' >
     <NavigationBar/>
     <div className="content-body">
       <Routes>
