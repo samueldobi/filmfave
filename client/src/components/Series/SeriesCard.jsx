@@ -25,7 +25,7 @@ const SeriesCard = ({name, overview, first_air_date, backdrop_path}) => {
             {overview}
         </p>
         <p className="mt-1 text-black-500">
-            Release Date:{first_air_date}
+            Release Date: {first_air_date}
         </p>
       </div>
    </div>
