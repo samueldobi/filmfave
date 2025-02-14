@@ -6,7 +6,7 @@ import TopMovies from './components/Movies/TopMovies.jsx';
 import TopSeries from './components/Series/TopSeries.jsx';
 import Genres from './Genres/Genres.jsx';
 import MovieFilter from './components/Moviefilter/MovieFilter.jsx';
-import Testhero from './components/Testhero.jsx';
+
 
 function App() {
 
@@ -17,7 +17,6 @@ function App() {
     <div className="content-body">
       <Routes>
           <Route path='/' element = {<Hero /> }/>
-          <Route path='/testhero' element = {<Testhero /> }/>
           <Route path = '/topmovies'  element = {<TopMovies/>} />
           <Route path = '/topseries'  element = {<TopSeries/>} />
           <Route path = '/moviefilter'  element = {<MovieFilter/>} />

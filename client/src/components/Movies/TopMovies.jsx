@@ -41,6 +41,9 @@ const TopMovies = () => {
     
     <div className='top-movies '>
         <Container className='p-3'>
+        <h1 className="text-light text-center text-capitalize fw-bold m-3 p-3 fs-1 ">
+            Top Rated Movies
+        </h1>
         <Row>
           {currentMovies.map((movie, index) => (
             <Col key={index} xs={12} md={4} lg={4} className="mb-4">

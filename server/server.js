@@ -8,10 +8,12 @@ app.get("/api/topmovies", async (req, res) => {
   try {
       const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
      res.json(response.data); // Send the response data back to the client
+     console.log(response.data)
   } catch (err) {
       console.log(err); 
       res.status(500).send('Internal Server Error'); // Handle errors appropriately
   }
+  
 });
 
 // Get the top series data from TMDB API

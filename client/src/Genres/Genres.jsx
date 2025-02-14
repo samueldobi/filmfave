@@ -44,8 +44,8 @@ const Genres = () => {
             window.scrollTo(0, 0);
     },[genreId])
   return (
-    <div className='p-3'>
-        <h1 className="text-light text-center text-capitalize fw-bold m-3 p-3 ">
+    <div className='p-3 m-3'>
+        <h1 className="text-light text-center text-capitalize fw-bold m-3 p-3 fs-1 ">
             {genreName}
         </h1>
         <Container>

@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 function NavigationBar() {
   return (
     <Navbar expand="lg" className=" navbar-body mx-auto   ">
-      <Container>
+      <Container className=''>
         <Navbar.Brand href="#home" className='fw-bold'>
           <Link to ="/" className='nav-links'>
             Filmfave

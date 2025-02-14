@@ -9,8 +9,8 @@
   overflow: hidden;
 }
 .app-body{
-
   height: 100%;
+  /* overflow:hidden; */
   background: #000428;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -31,9 +31,9 @@
 .navbar-body{
   width:70vw;
   z-index: 1000;
-  transform: translateY(3rem);
   border-radius:25px;
   background-color: var(--skyblue);
+  transform:translateY(5px)
 }
 .hero-body{
 min-height: 100vh;
@@ -55,6 +55,14 @@ min-height: 100vh;
 .movie-card img{
   height:fit-content;
 }
+.movie-filter-body{
+  height:100%;
+}
+.filter-select{
+  width:50%;
+  margin: 0 auto;
+  padding: 10px;
+}
 /* Movie Card styling */
 
 /* Media Queries */
@@ -62,5 +70,8 @@ min-height: 100vh;
   .navbar-body{
     width:90vw;
     transform: translateY(0.5rem);
+  }
+  .filter-select{
+    width:70%;
   }
 }

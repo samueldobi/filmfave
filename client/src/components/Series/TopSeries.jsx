@@ -36,6 +36,9 @@ const TopSeries = () => {
   return (
     <div className=''>
         <Container className='p-3'>
+        <h1 className="text-light text-center text-capitalize fw-bold m-3 p-3 fs-1 ">
+            Top Rated Series
+        </h1>
             <Row>
                 {currentSeries.map((serieList, index) =>{
 

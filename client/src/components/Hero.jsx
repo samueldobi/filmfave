@@ -28,7 +28,7 @@ const Hero = () => {
               <div className="grid">
                 <button
                   type="submit"
-                  className=" sm:p-4 py-3 px-4 my-5 inline-flex justify-center items-center gap-x-2 text-xl font-medium rounded-lg border border-transparent bg-white/10 text-white hover:bg-white/20 focus:outline-none focus:bg-white/20 disabled:opacity-50 disabled:pointer-events-none movie-btn"
+                  className=" sm:p-4 py-3 px-4 my-20 inline-flex justify-center items-center gap-x-2 text-xl font-medium rounded-lg border border-transparent bg-white/10 text-white hover:bg-white/20 focus:outline-none focus:bg-white/20 disabled:opacity-50 disabled:pointer-events-none movie-btn"
                 >
                   <Link to ="/moviefilter" className='flex   animate-bounceCustom'>
                       Get Movie Recommendations

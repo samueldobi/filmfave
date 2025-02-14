@@ -61,29 +61,35 @@ const MovieFilter = () => {
     }, [selectedGenres, selectedKeywords, selectedYears])
 
   return (
-    <div>
-   
-      <h2>Filter Movies</h2>
+    <div className=' movie-filter-body h-screen'>
+      
+      <h1 className="text-center p-4 m-4 text-lg text-white font-bold sm:text-lg lg:text-4xl lg:leading-tight dark:text-neutral-200">
+      Find your next favorite movie - <span className="text-blue-500">filter by genre, rating, and more!</span>
+      </h1>
+
       <Select
         options={genres}
         isMulti
         placeholder="Select Genres"
         onChange={setSelectedGenres}
+        className='filter-select'
       />
       <Select
         options={keywords}
         isMulti
         placeholder="Select Keywords"
         onChange={setSelectedKeywords}
+        className='filter-select'
       />
       <Select
         options={years}
         isMulti
         placeholder="Select Years"
         onChange={setSelectedYears}
+        className='filter-select'
       />
       
-      <h3 className='text-white '>Results:</h3>
+      <h3 className='text-white text-center text-4xl t m-2 p-2 '>Results:</h3>
       <Container>
             <Row>
             { movies && movies.length > 0 ?(
