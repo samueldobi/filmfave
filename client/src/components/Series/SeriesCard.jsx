@@ -13,30 +13,6 @@ const SeriesCard = ({name, overview, first_air_date, backdrop_path}) => {
    // Truncate overview to 150 characters for better display
   const truncatedOverview = overview ? overview.substring(0, 150) + (overview.length > 150 ? '...' : '') : '';
   return (
-  //   <div>
-  //     <div>
-  //       <div
-  //     href="#"
-  //     className="flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition w-80" 
-  //   >
-  //     <img
-  //       className="w-full h-60 object-cover rounded-t-xl" 
-  //       src={getPosterUrl(backdrop_path)}
-  //       alt="Series Image"
-  //     />
-  //     <div className="p-4 md:p-5 overflow-y-auto max-h-32 no-scrollbar">
-  //       <h3 className="text-lg font-bold text-gray-800">{name}</h3>
-  //       <p className="mt-1 text-gray-500">
-  //           {overview}
-  //       </p>
-  //       <p className="mt-1 text-black-500">
-  //           Release Date: {first_air_date}
-  //       </p>
-  //     </div>
-  //  </div>
-  //   </div>
-        
-  //   </div>
       <>
          <div className="group">
       <div 

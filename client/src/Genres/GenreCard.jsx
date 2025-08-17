@@ -13,27 +13,6 @@ const GenreCard = ({title, overview, release_date, backdrop_path}) => {
   // Truncate overview to 150 characters for better display
   const truncatedOverview = overview ? overview.substring(0, 150) + (overview.length > 150 ? '...' : '') : '';
   return (
-  //   <div>
-  //       <div
-  //     href="#"
-  //     className="flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition w-80" 
-  //   >
-  //     <img
-  //       className="w-full h-60 object-cover rounded-t-xl" 
-  //       src={getPosterUrl(backdrop_path)}
-  //       alt="Movie  Image"
-  //     />
-  //     <div className="p-4 md:p-5 overflow-y-auto max-h-32 no-scrollbar">
-  //       <h3 className="text-lg font-bold text-gray-800">{title}</h3>
-  //       <p className="mt-1 text-gray-500">
-  //           {overview}
-  //       </p>
-  //       <p className="mt-1 text-black-500">
-  //           Release Date: {release_date}
-  //       </p>
-  //     </div>
-  //  </div>
-  //   </div>
   <div className="group">
       <div 
         className="relative bg-gray-900 border border-gray-800 overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transform hover:-translate-y-2"
