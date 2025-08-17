@@ -4,5 +4,6 @@ const movieController = require('../controllers/movieController');
 const movieRouter = Router();
 movieRouter.get('/popular', movieController.popular_movies);
 movieRouter.get('/topmovies', movieController.top_movies);
+movieRouter.get('/topseries', movieController.top_series);
 
 module.exports = movieRouter;

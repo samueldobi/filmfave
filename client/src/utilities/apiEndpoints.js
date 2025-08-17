@@ -19,3 +19,12 @@ export const getTopMovies = async () => {
     throw error;
   }
 };
+export const getTopSeries = async () => {
+  try {
+    const response = await api.get("/popular");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching popular movies:", error);
+    throw error;
+  }
+};
