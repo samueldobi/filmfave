@@ -1,8 +1,9 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import SeriesCard from './SeriesCard.jsx';
-import { Col, Container, Row, Pagination } from 'react-bootstrap';
-im
+import { Col, Container, Row } from 'react-bootstrap';
+import { getTopSeries } from '../../utilities/apiEndpoints.js';
+import Pagination from '../Pagination/Pagination.jsx';
 
 
 const TopSeries = () => {
@@ -23,16 +24,17 @@ const TopSeries = () => {
     }
 
     useEffect(()=>{
-        fetch("/api/topseries")
-        .then(
-            response => response.json()
-        )
-        .then(
-                data => {
-                console.log(data.results)
-                setSeries(data.results)
-                }
-           )
+      const fetchTopSeries = async () => {
+          try {
+            const response = await getTopSeries();
+            setSeries(response.data.results);
+            console.log("Popular Series:", response);
+          } catch (error) {
+            console.error("Error fetching popular Series:", error);
+          }
+        };
+        fetchTopSeries(); 
+      window.scrollTo(0, 0);
     }, [])
   return (
     <div className=''>
@@ -48,7 +50,13 @@ const TopSeries = () => {
                     </Col>
                 })}
             </Row>
-            <Pagination className="justify-content-center m-3 p-3 paginate-div">
+            {/* Pagination */}
+                  <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                />
+            {/* <Pagination className="justify-content-center m-3 p-3 paginate-div">
           <Pagination.First  onClick={() => handlePageChange(1)} disabled={currentPage === 1} />
           <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
           {[...Array(totalPages).keys()].map(pageNumber => (
@@ -62,7 +70,7 @@ const TopSeries = () => {
           ))}
           <Pagination.Next onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} />
           <Pagination.Last onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages} />
-        </Pagination>
+        </Pagination> */}
         </Container>
     </div>
   )

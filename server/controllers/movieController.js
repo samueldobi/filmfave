@@ -18,7 +18,7 @@ module.exports.popular_movies =  async (req, res) =>{
 module.exports.top_movies =  async (req, res) =>{
     const apiKey = process.env.TMDB_API_KEY; 
     try{
-        const response = await axios.get(`https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}`);
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
         console.log("TMDB Key:", process.env.TMDB_API_KEY);
         console.log(response.data);
             res.status(200).json({

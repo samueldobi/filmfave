@@ -30,7 +30,7 @@ const MovieCard = ({ title, overview, release_date, backdrop_path }) => {
           <img
             className={`w-full h-full object-cover transition-all duration-700 ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-110'} group-hover:scale-105`}
             src={getPosterUrl(backdrop_path)}
-            alt={title}
+            alt={ title}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageLoaded(true)}
           />
@@ -50,7 +50,7 @@ const MovieCard = ({ title, overview, release_date, backdrop_path }) => {
         <div className="p-6 space-y-4">
           {/* Title */}
           <h3 className="text-xl font-light text-white tracking-wide leading-tight group-hover:text-blue-400 transition-colors duration-300">
-            {title}
+            { title}
           </h3>
 
           {/* Overview */}
@@ -63,7 +63,7 @@ const MovieCard = ({ title, overview, release_date, backdrop_path }) => {
           {/* Release Date */}
           <div className="flex items-center justify-between pt-2 border-t border-gray-800">
             <div className="text-xs text-gray-500 tracking-widest uppercase">
-              {new Date(release_date).getFullYear()}
+              {release_date}
             </div>
             <div className={`w-6 h-6 border border-gray-600 flex items-center justify-center transition-all duration-300 ${isHovered ? 'border-blue-500 bg-blue-500/10' : ''}`}>
               <div className={`w-2 h-2 bg-gray-600 transition-colors duration-300 ${isHovered ? 'bg-blue-500' : ''}`}></div>

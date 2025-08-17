@@ -12,19 +12,19 @@ export const getPopularMovies = async () => {
 // Get Top Movies
 export const getTopMovies = async () => {
   try {
-    const response = await api.get("/popular");
+    const response = await api.get("/topmovies");
     return response.data;
   } catch (error) {
-    console.error("Error fetching popular movies:", error);
+    console.error("Error fetching top movies:", error);
     throw error;
   }
 };
 export const getTopSeries = async () => {
   try {
-    const response = await api.get("/popular");
+    const response = await api.get("/topseries");
     return response.data;
   } catch (error) {
-    console.error("Error fetching popular movies:", error);
+    console.error("Error fetching top series:", error);
     throw error;
   }
 };
