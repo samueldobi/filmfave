@@ -28,8 +28,9 @@ Live site is at https://filmfave.vercel.app/
 
 ## 📸 Screenshots
 
-> <img width="1359" height="484" alt="Image" src="https://github.com/user-attachments/assets/63450b2a-ad90-41ee-b849-aa8e51f7c254" />
+ <img width="1343" height="540" alt="Image" src="https://github.com/user-attachments/assets/cb364dce-9a38-401d-b0ae-359e14ba245f" />
 
+<img width="1274" height="628" alt="Image" src="https://github.com/user-attachments/assets/4cc19f8d-7598-4482-ac87-5f124df82305" />
 
 
 
