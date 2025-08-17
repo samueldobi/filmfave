@@ -14,7 +14,7 @@ const MovieFilterCard = ({title, overview, release_date, backdrop_path}) => {
       className="flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition w-80" // Added w-80 for standard card width
     >
       <img
-        className="w-full h-60 object-cover rounded-t-xl" // Added h-48 for a fixed image height
+        className="w-full h-60 object-cover  rounded-t-xl" // Added h-48 for a fixed image height
         src={getPosterUrl(backdrop_path)}
         alt="Series Image"
       />
