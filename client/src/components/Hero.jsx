@@ -8,17 +8,8 @@ const Hero = () => {
  
   const [isLoaded, setIsLoaded] = useState(false);
   const [popularMovies, setPopularMovies] = useState([]);
-  const featuredFilms = [
-    { title: "Dune", year: "2021", rating: "8.0" },
-    { title: "Blade Runner 2049", year: "2017", rating: "8.0" },
-    { title: "Inception", year: "2010", rating: "8.8" },
-    { title: "Interstellar", year: "2014", rating: "8.6" },
-    { title: "The Batman", year: "2022", rating: "7.8" },
-    { title: "Mad Max: Fury Road", year: "2015", rating: "8.1" }
-  ];
 useEffect(() => {
   setIsLoaded(true);
-
   const fetchPopularMovies = async () => {
     try {
       const response = await getPopularMovies();
@@ -33,51 +24,13 @@ useEffect(() => {
 
   return (
     <>
-
-      {/* <main
-        id="content"
-        className="relative w-full  my-5 px-4 sm:px-6 lg:px-8 flex flex-col  items-center mx-auto before:absolute before:top-0 "
-      >
-        <div className="text-center py-8 px-4 sm:px-6 lg:px-8">
-  
-          <h1 className="text-2xl text-white sm:text-4xl">Your Personalized Movie Guide</h1>
-          <h2 className="mt-1 sm:mt-3 text-4xl font-bold text-white sm:text-6xl">
-            <span className="bg-clip-text bg-gradient-to-tr from-blue-600 to-purple-400 text-transparent">Filmfave</span>
-          </h2>
-
-        
-            <div className="mt-8 space-y-4">
-              
-
-          
-
-              <div className="grid">
-                <button
-                  type="submit"
-                  className=" sm:p-4 py-3 px-4 my-20 inline-flex justify-center items-center gap-x-2 text-xl font-medium rounded-lg border border-transparent bg-white/10 text-white hover:bg-white/20 focus:outline-none focus:bg-white/20 disabled:opacity-50 disabled:pointer-events-none movie-btn"
-                >
-                  <Link to ="/moviefilter" className='flex   animate-bounceCustom'>
-                      Get Movie Recommendations
-                    
-                  </Link>
-               
-                </button>
-              </div>
-            </div>
-          
-        </div>
-      </main> */}
        <div >
-   
-
-     
       {/* Hero Section */}
       <div className="relative z-10 px-8 pt-16 pb-32">
         <div className="max-w-6xl mx-auto">
           <div className={`transform transition-all duration-1500 delay-300 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
             <h1 className="text-7xl md:text-8xl font-thin leading-none mb-8 tracking-tight">
-              DISCOVER
-              <br />
+              DISCOVER {''}
               <span className="text-blue-400">CINEMA</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 max-w-2xl font-light leading-relaxed mb-12">
@@ -87,11 +40,13 @@ useEffect(() => {
 
           {/* Search Bar */}
           <div className={`relative max-w-2xl transform transition-all duration-1500 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <input 
-              type="text" 
-              placeholder="Search films, directors, genres..."
-              className="w-full bg-gray-900/50 border border-gray-800 rounded-none px-8 py-6 text-lg focus:outline-none focus:border-blue-400 transition-all duration-300 backdrop-blur-sm"
-            />
+            <Link to="/moviefilter">
+            <button
+              placeholder=""
+              className="w-full bg-gray-900/50 border border-gray-800 rounded-none px-8 py-6 text-lg focus:outline-none focus:border-blue-400 transition-all duration-300 backdrop-blur-sm" >
+            <p> Filter by  years, keywords, genres...</p>
+            </button>
+            </Link>
             <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
               <div className="w-8 h-8 border border-gray-600 flex items-center justify-center">
                 <div className="w-4 h-4 border border-gray-400"></div>

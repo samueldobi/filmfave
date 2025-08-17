@@ -74,7 +74,7 @@ const SeriesCard = ({name, overview, first_air_date, backdrop_path}) => {
         {/* Subtle corner accent */}
         <div className="absolute top-0 right-0 w-8 h-8 border-l border-b border-gray-700 group-hover:border-blue-500/50 transition-colors duration-300"></div>
       </div>
-    </div>
+        </div>
       </>
   )
 }

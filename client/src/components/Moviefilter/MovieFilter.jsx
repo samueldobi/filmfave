@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import Select from "react-select";
-import {Container,Row, Col} from 'react-bootstrap';
 import { useState } from 'react';
 import axios from 'axios';
 import MovieFilterCard from './MovieFilterCard.jsx';
+import { getFilteredMovies } from '../../utilities/apiEndpoints.js';
+import Pagination from '../Pagination/Pagination.jsx';
 
 
 const genres = [
@@ -27,8 +28,8 @@ const keywords = [
   { value: 9715, label: "Superhero" },
   { value: 33788, label: "Friendship" },
 ];
-const years = Array.from({length: 45}, (_,i)=>{
-  const year = 1980 + i;
+const years = Array.from({length: 46}, (_,i)=>{
+  const year = 2025 - i;
   return {value :year , label: year}
 })
 const MovieFilter = () => {
@@ -36,6 +37,7 @@ const MovieFilter = () => {
   const [selectedKeywords, setSelectedKeywords] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [movies, setMovies] = useState([]);
+  const [currentPage, setCurrentPage] =  useState(1);
 
     useEffect(()=>{
       // If no changes are made, no api call is made
@@ -48,9 +50,12 @@ const MovieFilter = () => {
         try {
            // apikey
           const apiKey = import.meta.env.VITE_API_KEY;
-          const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreQuery}&with_keywords=${keywordQuery}&primary_release_year=${yearQuery}`)
-          // const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=1ae5981ff7d4f8f7646cc506eebc1c91&primary_release_year=2017&with_genres=35`)
-          const movieData = response.data.results
+           const response = await getFilteredMovies({
+            genres: genreQuery,
+            keywords: keywordQuery,
+            years: yearQuery
+          });
+          const movieData = response.data
           console.log(movieData)
           setMovies(movieData)
         } catch(error){
@@ -60,53 +65,127 @@ const MovieFilter = () => {
       fetchData();
     }, [selectedGenres, selectedKeywords, selectedYears])
 
-  return (
-    <div className=' movie-filter-body h-screen'>
-      
-      <h1 className="text-center p-4 m-4 text-lg text-white font-bold sm:text-lg lg:text-4xl lg:leading-tight dark:text-neutral-200">
-      Find your next favorite movie - <span className="text-blue-500">filter by genre, rating, and more!</span>
-      </h1>
+  const customSelectStyles = {
+  control: (provided) => ({
+    ...provided,
+    backgroundColor: '#1f2937', 
+    borderColor: '#374151', 
+    color: 'white',
+  }),
+  menu: (provided) => ({
+    ...provided,
+    backgroundColor: '#1f2937', 
+  }),
+  singleValue: (provided) => ({
+    ...provided,
+    color: 'white', 
+  }),
+  multiValue: (provided) => ({
+    ...provided,
+    backgroundColor: '#374151', 
+  }),
+  multiValueLabel: (provided) => ({
+    ...provided,
+    color: 'white', 
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    backgroundColor: state.isFocused ? '#2563eb' : '#1f2937', 
+    color: 'white',
+  }),
+   placeholder: (provided) => ({
+    ...provided,
+    color: '#fff', // 
+    fontStyle: 'italic',
+  }),
+};
 
+    const moviesPerPage = 3;
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(movies.length / moviesPerPage)
+    // Get the movie for the current page 
+    const currentMovies = movies.slice(
+      (currentPage - 1) * moviesPerPage,
+      currentPage * moviesPerPage
+    )
+    // Function to Handle Page Change
+    const handlePageChange = (pageNumber) =>{
+      setCurrentPage(pageNumber);
+      window.scrollTo(0, 0);
+    }
+
+
+  return (
+    <div className="movie-filter-body min-h-screen bg-gray-900 p-6 md:p-12">
+  {/* Page Heading */}
+  <h1 className="text-center text-white font-bold mb-8 text-xl sm:text-2xl lg:text-4xl lg:leading-tight">
+    Find your next favorite movie -{" "}
+    <span className="text-blue-500">filter by genre, rating, and more!</span>
+  </h1>
+
+  {/* Filters */}
+  <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 mb-12">
+    <div className="flex-1">
       <Select
         options={genres}
         isMulti
         placeholder="Select Genres"
         onChange={setSelectedGenres}
-        className='filter-select'
+        className="react-select-container"
+        classNamePrefix="react-select"
+        styles={customSelectStyles}
       />
+    </div>
+    <div className="flex-1">
       <Select
         options={keywords}
         isMulti
         placeholder="Select Keywords"
         onChange={setSelectedKeywords}
-        className='filter-select'
+        className="react-select-container"
+        classNamePrefix="react-select"
+        styles={customSelectStyles}
       />
+    </div>
+    <div className="flex-1">
       <Select
         options={years}
         isMulti
         placeholder="Select Years"
         onChange={setSelectedYears}
-        className='filter-select'
+        className="react-select-container"
+        classNamePrefix="react-select"
+        styles={customSelectStyles}
       />
-      
-      <h3 className='text-white text-center text-4xl t m-2 p-2 '>Results:</h3>
-      <Container className='filter-container '>
-            <Row className=' '>
-            { movies && movies.length > 0 ?(
-               movies.map((movie, index) => (
-                <Col key={index} xs={12} md={6} lg={5} className="mb-4 ">
-                <MovieFilterCard {...movie} />
-                </Col>
-               ))
-            ) :(
-              <p className="text-white">No results for this input, try a different combination</p>
-            )}
-           
-            </Row>
-      </Container>
-
-   
     </div>
+  </div>
+
+  {/* Results Heading */}
+  <h3 className="text-white text-center text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">
+    Results:
+  </h3>
+
+  {/* Movie Cards Grid */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {currentMovies && currentMovies.length > 0 ? (
+      currentMovies.map((movie, index) => (
+        <MovieFilterCard key={index} {...movie} />
+      ))
+    ) : (
+      <p className="text-white col-span-full text-center">
+        No results for this input, try a different combination
+      </p>
+    )}
+  </div>
+  {/*  Pagination Component */}
+  <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+</div>
+
+
   )
 }
 

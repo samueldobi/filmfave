@@ -37,3 +37,12 @@ export const getGenreById = async (genreId) => {
     throw error;
   }
 };
+export const getFilteredMovies = async (filterParams) => {
+  try {
+    const response = await api.get("/filter", { params: filterParams });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching movie filter:", error);
+    throw error;
+  }
+};
