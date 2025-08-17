@@ -2,6 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import MovieCard from './MovieCard.jsx';
 import {Container,Row, Col, Pagination} from 'react-bootstrap';
+import { getTopMovies } from '../../utilities/apiEndpoints.js';
 
 
 
@@ -25,15 +26,16 @@ const TopMovies = () => {
 
     // Fetch the api data
     useEffect(()=>{
-      fetch("/api/topmovies")
-      .then(
-        response => response.json()
-      ).then(
-        data =>{
-            console.log(data.results)
-          setMovies(data.results)
-        }
-      )
+        const fetchTopMovies = async () => {
+          try {
+            const response = await getTopMovies();
+            setMovies(response.data.results);
+            console.log("Popular Movies:", response);
+          } catch (error) {
+            console.error("Error fetching popular movies:", error);
+          }
+        };
+        fetchTopMovies(); 
       window.scrollTo(0, 0);
     }, [])
 

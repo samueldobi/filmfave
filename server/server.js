@@ -1,10 +1,24 @@
 const express = require('express');
 const app = express();
-const axios =  require('axios');
-const apiKey = '1ae5981ff7d4f8f7646cc506eebc1c91';
+const dotenv = require('dotenv');
+const movieRoutes = require('./routes/movieRoutes');
+const cors = require("cors");
 
+dotenv.config();
+// Middleware
+app.use(express.json());
+app.use(cors({
+    origin: ["http://localhost:3000", "https://filmfave.vercel.app/"], 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  }));
+
+
+// get the popular movies from TMDB API
+app.use("/api", movieRoutes);
 // Get the top movies data from TMDB API  
 app.get("/api/topmovies", async (req, res) => {
+  const apiKey = process.env.TMDB_API_KEY; // Ensure you have your API key in .env file
   try {
       const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
      res.json(response.data); // Send the response data back to the client
