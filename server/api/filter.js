@@ -1,5 +1,5 @@
 const axios = require('axios');
-module.exports.movie_filter = async (req, res) => {
+export default async function handler(req, res){
     const { genres, keywords, year } = req.query;
       const apiKey = process.env.TMDB_API_KEY;
 

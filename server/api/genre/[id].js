@@ -1,4 +1,4 @@
-module.exports.genre_by_id = async (req, res) => {
+export default async function handler(req, res){
      const { id } = req.params; 
     const apiKey = process.env.TMDB_API_KEY; 
   try {
