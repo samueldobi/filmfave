@@ -28,3 +28,12 @@ export const getTopSeries = async () => {
     throw error;
   }
 };
+export const getGenreById = async (genreId) => {
+  try {
+    const response = await api.get(`/genre/${genreId}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching top series:", error);
+    throw error;
+  }
+};

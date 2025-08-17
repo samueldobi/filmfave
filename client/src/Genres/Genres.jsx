@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import GenreCard from './GenreCard.jsx';
-import {Container,Row, Col, Pagination} from 'react-bootstrap';
+import {Container,Row, Col} from 'react-bootstrap';
+import { getGenreById } from '../utilities/apiEndpoints.js';
+import Pagination from '../components/Pagination/Pagination.jsx';
 
 const Genres = () => {
     const {genreName, genreId} = useParams();
@@ -27,20 +29,19 @@ const Genres = () => {
 
     useEffect(()=>{
     
-            const fetchData = async () => {
+            const fetchMoviesByGenre = async () => {
                 try {
-                   // apikey
-                    const apiKey = import.meta.env.VITE_API_KEY;
-                    const response = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genreId}`)  
-                   
-                    const genreList = response.data.results
-                    console.log(genreList)
-                    setGenres(genreList)
+                   const response = await getGenreById(genreId);
+                   console.log("Genre List:", response);
+                   setGenres(response.data.results);
                 } catch (error) {
                     console.log('Error getting data', error)
                 }
             } 
-            fetchData();
+              if (genreId) {
+                fetchMoviesByGenre();
+                window.scrollTo(0, 0);
+              }
             window.scrollTo(0, 0);
     },[genreId])
   return (
@@ -56,7 +57,7 @@ const Genres = () => {
                 </Col>
                ))}
             </Row>
-            <Pagination className="justify-content-center m-3 p-3 paginate-div">
+            {/* <Pagination className="justify-content-center m-3 p-3 paginate-div">
           <Pagination.First  onClick={() => handlePageChange(1)} disabled={currentPage === 1}  />
           <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
           {[...Array(totalPages).keys()].map(pageNumber => (
@@ -70,7 +71,12 @@ const Genres = () => {
           ))}
           <Pagination.Next onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} />
           <Pagination.Last onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages} />
-        </Pagination>
+        </Pagination> */}
+                  <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={handlePageChange}
+                />
         </Container>
     </div>
   )
