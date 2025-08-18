@@ -1,5 +1,5 @@
 const axios = require('axios');
-export default async function handler(req, res){
+module.exports = async (req, res) =>{
     const apiKey = process.env.TMDB_API_KEY; 
     try{
         const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
