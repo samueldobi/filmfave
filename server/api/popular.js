@@ -1,5 +1,6 @@
 const axios = require('axios');
-module.exports = async (req, res) =>{
+const withCors = require('../lib/cors');
+async function handler (req, res){
     const apiKey = process.env.TMDB_API_KEY; 
     if(!apiKey){
         return res.status(500).json({success:false, message:"API key not found"});
@@ -16,3 +17,4 @@ module.exports = async (req, res) =>{
         res.status(500).json({succes:false, message:"Failed to fetch popular movies"});
     }
 }
+module.exports = withCors(handler);
