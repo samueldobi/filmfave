@@ -50,6 +50,12 @@ function NavigationBar() {
         >
           TOP SERIES
         </Link>
+        <Link
+          to="/moviefilter"
+          className="text-sm tracking-wider hover:text-blue-400 transition-colors duration-300"
+        >
+          MOVIE FILTER
+        </Link>
 
         {/* Genres Dropdown */}
         <div className="relative">
