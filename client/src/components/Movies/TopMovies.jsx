@@ -29,7 +29,6 @@ const TopMovies = () => {
           try {
             const response = await getTopMovies();
             setMovies(response.data.results);
-            console.log("Popular Movies:", response);
           } catch (error) {
             console.error("Error fetching popular movies:", error);
           }

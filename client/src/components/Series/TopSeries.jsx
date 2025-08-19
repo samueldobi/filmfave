@@ -27,7 +27,6 @@ const TopSeries = () => {
           try {
             const response = await getTopSeries();
             setSeries(response.data.results);
-            console.log("Popular Series:", response);
           } catch (error) {
             console.error("Error fetching popular Series:", error);
           }

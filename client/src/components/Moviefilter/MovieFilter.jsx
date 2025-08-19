@@ -56,7 +56,6 @@ const MovieFilter = () => {
             years: yearQuery
           });
           const movieData = response.data
-          console.log(movieData)
           setMovies(movieData)
         } catch(error){
           console.log('Error getting data', error)

@@ -14,7 +14,6 @@ useEffect(() => {
     try {
       const response = await getPopularMovies();
       setPopularMovies(response.data.results);
-      console.log("Popular Movies:", response);
     } catch (error) {
       console.error("Error fetching popular movies:", error);
     }

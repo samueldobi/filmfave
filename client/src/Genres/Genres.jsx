@@ -31,7 +31,7 @@ const Genres = () => {
             const fetchMoviesByGenre = async () => {
                 try {
                    const response = await getGenreById(genreId);
-                   console.log("Genre List:", response);
+  
                    setGenres(response.data.results);
                 } catch (error) {
                     console.log('Error getting data', error)
