@@ -1,4 +1,5 @@
 const axios = require('axios');
+const withCors = require('../lib/cors');
 export default async function handler(req, res){
     const apiKey = process.env.TMDB_API_KEY; 
     try{
@@ -13,3 +14,4 @@ export default async function handler(req, res){
         res.status(500).json({succes:false, message:"Failed to fetch popular movies"});
     }
 }
+module.exports = withCors(handler);

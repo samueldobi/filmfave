@@ -1,5 +1,6 @@
 const axios = require('axios');
-export default async function handler(req, res){
+const withCors = require('../lib/cors');
+async function handler(req, res){
     const { genres, keywords, year } = req.query;
       const apiKey = process.env.TMDB_API_KEY;
 
@@ -21,3 +22,4 @@ export default async function handler(req, res){
     console.error("Error fetching filtered movies:", error.message);
      res.status(500).json({ success: false, message: "Failed to fetch movies" });}
 };
+module.exports = withCors(handler);
