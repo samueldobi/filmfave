@@ -22,4 +22,4 @@ function withCors(handler) {
   };
 }
 
-export default withCors;
+module.exports = withCors;
