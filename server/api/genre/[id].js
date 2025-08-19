@@ -1,7 +1,7 @@
 const axios = require('axios');
 const withCors = require('../../lib/cors');
 async function handler(req, res){
-     const { id } = req.params; 
+     const { id } = req.query; 
     const apiKey = process.env.TMDB_API_KEY; 
   try {
     const response = await axios.get(
