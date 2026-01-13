@@ -1,4 +1,4 @@
-# 🎬 FilmFave
+#  FilmFave
 
 **FilmFave** is a modern movie recommendation web application built with **React**, **Node.js**, and powered by **The Movie Database (TMDB) API**. It helps users discover trending, top-rated, and personalized movie suggestions with a clean and user-friendly interface.
 
@@ -6,18 +6,18 @@
 Live site is at https://filmfave.vercel.app/
 ---
 
-## 🚀 Features
+##  Features
 
-- 🎯 **Personalized Recommendations** based on preferences
-- 🏆 **Trending & Top-Rated Movies**
-- 📄 **Detailed Movie Info** including trailers, overviews, and ratings
-- 📂 **Genre-Based Filtering**
-- 🖼️ Clean, responsive UI using React
-- 🌐 TMDB API integration for real-time data
+-  **Personalized Recommendations** based on preferences
+-  **Trending & Top-Rated Movies**
+-  **Detailed Movie Info** including trailers, overviews, and ratings
+-  **Genre-Based Filtering**
+-  Clean, responsive UI using React
+-  TMDB API integration for real-time data
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend:** React, Tailwind CSS
 - **Backend:** Node.js, Express.js
@@ -26,7 +26,7 @@ Live site is at https://filmfave.vercel.app/
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
  <img width="1343" height="540" alt="Image" src="https://github.com/user-attachments/assets/cb364dce-9a38-401d-b0ae-359e14ba245f" />
 
