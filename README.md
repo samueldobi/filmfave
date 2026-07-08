@@ -1,17 +1,19 @@
 #  FilmFave
 
-**FilmFave** is a modern movie recommendation web application built with **React**, **Node.js**, and powered by **The Movie Database (TMDB) API**. It helps users discover trending, top-rated, and personalized movie suggestions with a clean and user-friendly interface.
+**FilmFave** is a modern movie recommendation web application built with **React**, **Node.js**, and powered by **The Movie Database (TMDB) API** and **AI-driven search**. It helps users discover trending, top-rated, and personalized movie suggestions with a clean and user-friendly interface.
 
+✨ **AI-Powered:** Describe what you want to watch in plain English — FilmFave understands and finds the perfect match.
 
 Live site is at https://filmfave.vercel.app/
 ---
 
 ##  Features
 
+-  **AI-Powered Natural Language Search** — type "a funny 90s comedy about clumsy detectives" and get spot-on recommendations, powered by Groq LLM
 -  **Personalized Recommendations** based on preferences
--  **Trending & Top-Rated Movies**
--  **Detailed Movie Info** including trailers, overviews, and ratings
--  **Genre-Based Filtering**
+-  **Trending & Top-Rated Movies & TV Shows**
+-  **Detailed Modal View** with trailers, full cast, ratings, and overviews
+-  **Genre & Keyword Filtering**
 -  Clean, responsive UI using React
 -  TMDB API integration for real-time data
 
@@ -21,8 +23,9 @@ Live site is at https://filmfave.vercel.app/
 
 - **Frontend:** React, Tailwind CSS
 - **Backend:** Node.js, Express.js
-- **API:** TMDB (The Movie Database)
-- **API REQUEST AND NAVIGATION:** Axios, React Router
+- **APIs:** TMDB (The Movie Database), Groq (LLM inference)
+- **AI Model:** Llama 3.3 70B (via Groq)
+- **HTTP & Navigation:** Axios, React Router
 
 ---
 
