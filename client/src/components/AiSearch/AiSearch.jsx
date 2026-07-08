@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Sparkles, Search } from 'lucide-react';
 import MovieFilterCard from '../Moviefilter/MovieFilterCard.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
+import usePagination from '../../hooks/usePagination.js';
 import { aiSearch } from '../../utilities/apiEndpoints.js';
 
 const AiSearch = () => {
@@ -12,20 +13,8 @@ const AiSearch = () => {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const [interpretation, setInterpretation] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
   const [error, setError] = useState(null);
-
-  const moviesPerPage = 3;
-  const totalPages = Math.ceil(movies.length / moviesPerPage);
-  const currentMovies = movies.slice(
-    (currentPage - 1) * moviesPerPage,
-    currentPage * moviesPerPage
-  );
-
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo(0, 0);
-  };
+  const { currentPage, totalPages, currentItems: currentMovies, handlePageChange, setCurrentPage } = usePagination(movies);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

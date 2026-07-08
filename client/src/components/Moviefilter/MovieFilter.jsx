@@ -5,6 +5,7 @@ import axios from 'axios';
 import MovieFilterCard from './MovieFilterCard.jsx';
 import { getFilteredMovies } from '../../utilities/apiEndpoints.js';
 import Pagination from '../Pagination/Pagination.jsx';
+import usePagination from '../../hooks/usePagination.js';
 
 
 const genres = [
@@ -37,7 +38,7 @@ const MovieFilter = () => {
   const [selectedKeywords, setSelectedKeywords] = useState([]);
   const [selectedYears, setSelectedYears] = useState([]);
   const [movies, setMovies] = useState([]);
-  const [currentPage, setCurrentPage] =  useState(1);
+  const { currentPage, totalPages, currentItems: currentMovies, handlePageChange } = usePagination(movies);
 
     useEffect(()=>{
       // If no changes are made, no api call is made
@@ -98,21 +99,6 @@ const MovieFilter = () => {
     fontStyle: 'italic',
   }),
 };
-
-    const moviesPerPage = 3;
-    // Calculate the total number of pages
-    const totalPages = Math.ceil(movies.length / moviesPerPage)
-    // Get the movie for the current page 
-    const currentMovies = movies.slice(
-      (currentPage - 1) * moviesPerPage,
-      currentPage * moviesPerPage
-    )
-    // Function to Handle Page Change
-    const handlePageChange = (pageNumber) =>{
-      setCurrentPage(pageNumber);
-      window.scrollTo(0, 0);
-    }
-
 
   return (
     <div className="movie-filter-body min-h-screen bg-gray-900 p-6 md:p-12">
