@@ -82,6 +82,45 @@ module.exports.movie_filter = async (req, res) => {
      res.status(500).json({ success: false, message: "Failed to fetch movies" });}
 };
 
+module.exports.media_details = async (req, res) => {
+  const { type, id } = req.params;
+  const apiKey = process.env.TMDB_API_KEY;
+
+  if (!['movie', 'tv'].includes(type)) {
+    return res.status(400).json({ success: false, message: 'Type must be movie or tv' });
+  }
+
+  try {
+    const [detailRes, creditsRes, videosRes] = await Promise.all([
+      axios.get(`https://api.themoviedb.org/3/${type}/${id}`, {
+        params: { api_key: apiKey, append_to_response: '' },
+      }),
+      axios.get(`https://api.themoviedb.org/3/${type}/${id}/credits`, {
+        params: { api_key: apiKey },
+      }),
+      axios.get(`https://api.themoviedb.org/3/${type}/${id}/videos`, {
+        params: { api_key: apiKey },
+      }),
+    ]);
+
+    const trailer = (videosRes.data.results || []).find(
+      (v) => v.type === 'Trailer' && v.site === 'YouTube'
+    );
+
+    res.status(200).json({
+      success: true,
+      data: {
+        ...detailRes.data,
+        credits: creditsRes.data,
+        trailer: trailer || null,
+      },
+    });
+  } catch (error) {
+    console.error('Error fetching media details:', error.message);
+    res.status(500).json({ success: false, message: 'Failed to fetch details' });
+  }
+};
+
 module.exports.ai_search = async (req, res) => {
   const { query } = req.body;
   if (!query || !query.trim()) {

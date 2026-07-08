@@ -56,3 +56,13 @@ export const aiSearch = async (query) => {
     throw error;
   }
 };
+
+export const getMediaDetails = async (type, id) => {
+  try {
+    const response = await api.get(`/details/${type}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching media details:", error);
+    throw error;
+  }
+};

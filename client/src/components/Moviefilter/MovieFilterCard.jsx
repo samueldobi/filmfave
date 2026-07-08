@@ -1,39 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
-// import Card from 'react-bootstrap/Card';
+import { useMediaModal } from '../MediaModal/MediaModalContext.jsx';
 
 // Get the url of the image from TMDB website
 const  getPosterUrl = (backdrop_path) =>{
     return `https://media.themoviedb.org/t/p/w300_and_h450_bestv2${backdrop_path}`
 }
-const MovieFilterCard = ({title, overview, release_date, backdrop_path}) => {
+const MovieFilterCard = ({id, title, overview, release_date, backdrop_path}) => {
+    const { openMedia } = useMediaModal();
     const [imageLoaded, setImageLoaded] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
      // Truncate overview to 150 characters for better display
     const truncatedOverview = overview ? overview.substring(0, 150) + (overview.length > 150 ? '...' : '') : '';
   return (
-  //   <div className='p-1 ml-4'>
-  //       <div
-  //     href="#"
-  //     className="flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-lg focus:outline-none focus:shadow-lg transition w-80" 
-  //   >
-  //     <img
-  //       className="w-full h-60 object-cover  rounded-t-xl" 
-  //       src={getPosterUrl(backdrop_path)}
-  //       alt="Series Image"
-  //     />
-  //     <div className="p-4 md:p-5 overflow-y-auto max-h-32 no-scrollbar">
-  //       <h3 className="text-lg font-bold text-gray-800">{title}</h3>
-  //       <p className="mt-1 text-gray-500">
-  //           {overview}
-  //       </p>
-  //       <p className="mt-1 text-black-500">
-  //           Release Date: {release_date}
-  //       </p>
-  //     </div>
-  //  </div>
-  //   </div>
-      <div className="group">
+      <div className="group cursor-pointer" onClick={() => openMedia(id, 'movie')}>
       <div 
         className="relative bg-gray-900 border border-gray-800 overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transform hover:-translate-y-2"
         onMouseEnter={() => setIsHovered(true)}

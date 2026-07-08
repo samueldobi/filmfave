@@ -1,20 +1,19 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useMediaModal } from '../MediaModal/MediaModalContext.jsx';
 
 const getPosterUrl = (backdrop_path) =>{
     return `https://media.themoviedb.org/t/p/w220_and_h330_face/${backdrop_path}`
 }
-const SeriesCard = ({name, overview, first_air_date, backdrop_path}) => {
-  const overviewArray = overview.split("");
-  const overCopy = overviewArray.splice(0, 200);
+const SeriesCard = ({id, name, overview, first_air_date, backdrop_path}) => {
+  const { openMedia } = useMediaModal();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
    // Truncate overview to 150 characters for better display
   const truncatedOverview = overview ? overview.substring(0, 150) + (overview.length > 150 ? '...' : '') : '';
   return (
       <>
-         <div className="group">
+         <div className="group cursor-pointer" onClick={() => openMedia(id, 'tv')}>
       <div 
         className="relative bg-gray-900 border border-gray-800 overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transform hover:-translate-y-2"
         onMouseEnter={() => setIsHovered(true)}

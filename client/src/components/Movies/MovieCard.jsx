@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useMediaModal } from '../MediaModal/MediaModalContext.jsx';
 
 // Get the url of the image from tmdb website
 const getPosterUrl = (backdrop_path) => {
@@ -6,7 +7,8 @@ const getPosterUrl = (backdrop_path) => {
 }
 
 // This is the movie card main component
-const MovieCard = ({ title, overview, release_date, backdrop_path }) => {
+const MovieCard = ({ id, title, overview, release_date, backdrop_path }) => {
+  const { openMedia } = useMediaModal();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   
@@ -14,7 +16,7 @@ const MovieCard = ({ title, overview, release_date, backdrop_path }) => {
   const truncatedOverview = overview ? overview.substring(0, 150) + (overview.length > 150 ? '...' : '') : '';
 
   return (
-    <div className="group">
+    <div className="group cursor-pointer" onClick={() => openMedia(id, 'movie')}>
       <div 
         className="relative bg-gray-900 border border-gray-800 overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transform hover:-translate-y-2"
         onMouseEnter={() => setIsHovered(true)}

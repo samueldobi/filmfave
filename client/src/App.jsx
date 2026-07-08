@@ -8,6 +8,8 @@ import TopSeries from './components/Series/TopSeries.jsx';
 import Genres from './Genres/Genres.jsx';
 import MovieFilter from './components/Moviefilter/MovieFilter.jsx';
 import AiSearch from './components/AiSearch/AiSearch.jsx';
+import { MediaModalProvider } from './components/MediaModal/MediaModalContext.jsx';
+import MediaModal from './components/MediaModal/MediaModal.jsx';
 
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
 
   return (
     <Router>
+    <MediaModalProvider>
     <div className='min-h-screen bg-black text-white overflow-hidden relative' >
          {/* Animated background particles */}
       <div className="absolute inset-0">
@@ -62,9 +65,11 @@ function App() {
           <Route path = '/aisearch'  element = {<AiSearch/>} />
           <Route path = '/genres/:genreName/:genreId'  element = {<Genres/>} />
       </Routes>
- 
+  
     </div>
     </div>
+    <MediaModal />
+    </MediaModalProvider>
     </Router>
   )
 }

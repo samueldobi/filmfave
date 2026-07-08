@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import MovieBtn from './MovieBtn.jsx';
 import { Link } from 'react-router-dom';
 import { getPopularMovies } from '../utilities/apiEndpoints.js';
+import { useMediaModal } from './MediaModal/MediaModalContext.jsx';
 
 
 const Hero = () => {
- 
+  const { openMedia } = useMediaModal();
   const [isLoaded, setIsLoaded] = useState(false);
   const [popularMovies, setPopularMovies] = useState([]);
 useEffect(() => {
@@ -64,10 +65,11 @@ useEffect(() => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
          {popularMovies.map((film, index) => (
-            <div 
+             <div 
               key={index}
               className={`group cursor-pointer transform transition-all duration-1500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}
               style={{ transitionDelay: `${800 + index * 100}ms` }}
+              onClick={() => openMedia(film.id, 'movie')}
             >
               <div className="relative overflow-hidden bg-gray-900 aspect-[2/3] mb-4 hover:bg-gray-800 transition-all duration-500">
                 {/* Movie poster */}
