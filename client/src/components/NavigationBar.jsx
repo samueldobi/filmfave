@@ -56,6 +56,12 @@ function NavigationBar() {
         >
           MOVIE FILTER
         </Link>
+        <Link
+          to="/aisearch"
+          className="text-sm tracking-wider hover:text-blue-400 transition-colors duration-300"
+        >
+          AI SEARCH
+        </Link>
 
         {/* Genres Dropdown */}
         <div className="relative">
@@ -112,6 +118,13 @@ function NavigationBar() {
             className="text-sm tracking-wider hover:text-blue-400 transition-colors duration-300"
           >
             TOP SERIES
+          </Link>
+          <Link
+            to="/aisearch"
+            onClick={() => setIsOpen(false)}
+            className="text-sm tracking-wider hover:text-blue-400 transition-colors duration-300"
+          >
+            AI SEARCH
           </Link>
 
           {/* Genres collapsible on mobile */}

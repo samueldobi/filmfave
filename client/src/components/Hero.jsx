@@ -39,11 +39,11 @@ useEffect(() => {
 
           {/* Search Bar */}
           <div className={`relative max-w-2xl transform transition-all duration-1500 delay-500 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <Link to="/moviefilter">
+            <Link to="/aisearch">
             <button
               placeholder=""
               className="w-full bg-gray-900/50 border border-gray-800 rounded-none px-8 py-6 text-lg focus:outline-none focus:border-blue-400 transition-all duration-300 backdrop-blur-sm" >
-            <p> Filter by  years, keywords, genres...</p>
+            <p> Tell us what you feel like watching — powered by AI</p>
             </button>
             </Link>
             <div className="absolute right-6 top-1/2 transform -translate-y-1/2">

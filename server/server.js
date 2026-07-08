@@ -20,8 +20,8 @@ app.use("/api", movieRoutes);
 const PORT = process.env.PORT || 3000;
 
 // start up the backend
-app.listen('5000', ()=>{ 
-    console.log('server started on port 5000')
+app.listen('4000', ()=>{ 
+    console.log('server started on port 4000')
 })
 
  

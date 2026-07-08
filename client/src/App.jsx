@@ -7,6 +7,7 @@ import TopMovies from './components/Movies/TopMovies.jsx';
 import TopSeries from './components/Series/TopSeries.jsx';
 import Genres from './Genres/Genres.jsx';
 import MovieFilter from './components/Moviefilter/MovieFilter.jsx';
+import AiSearch from './components/AiSearch/AiSearch.jsx';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <Route path = '/topmovies'  element = {<TopMovies/>} />
           <Route path = '/topseries'  element = {<TopSeries/>} />
           <Route path = '/moviefilter'  element = {<MovieFilter/>} />
+          <Route path = '/aisearch'  element = {<AiSearch/>} />
           <Route path = '/genres/:genreName/:genreId'  element = {<Genres/>} />
       </Routes>
  

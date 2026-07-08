@@ -46,3 +46,13 @@ export const getFilteredMovies = async (filterParams) => {
     throw error;
   }
 };
+
+export const aiSearch = async (query) => {
+  try {
+    const response = await api.post("/ai-search", { query });
+    return response.data;
+  } catch (error) {
+    console.error("Error in AI search:", error);
+    throw error;
+  }
+};
