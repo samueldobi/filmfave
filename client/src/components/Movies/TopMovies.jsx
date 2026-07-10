@@ -9,7 +9,7 @@ const TopMovies = () => {
   const [movies, setMovies] = useState([]);
   // Pagination
     const [currentPage, setCurrentPage] =  useState(1);
-    const moviesPerPage = 3;
+    const moviesPerPage = 6;
     // Calculate the total number of pages
     const totalPages = Math.ceil(movies.length / moviesPerPage)
     // Get the movie for the current page 

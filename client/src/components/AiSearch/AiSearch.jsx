@@ -95,7 +95,7 @@ const AiSearch = () => {
           </div>
         )}
 
-        {interpretation && !loading && (
+        {/* {interpretation && !loading && (
           <div className="mb-8 p-4 bg-gray-900/30 border border-gray-800">
             <p className="text-sm text-gray-500 font-light">
               AI interpreted your request as:{' '}
@@ -106,7 +106,7 @@ const AiSearch = () => {
               </span>
             </p>
           </div>
-        )}
+        )} */}
 
         {searched && !loading && movies.length === 0 && (
           <div className="text-center py-20">

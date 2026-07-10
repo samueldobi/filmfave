@@ -8,7 +8,7 @@ import Pagination from '../Pagination/Pagination.jsx';
 const TopSeries = () => {
     const [series, setSeries] = useState([]);
     const [ currentPage, setCurrentPage] = useState(1);
-    const seriesPerPage = 3;
+    const seriesPerPage = 6;
     // Get the total number of pages
     const totalPages = Math.ceil(series.length/seriesPerPage);
     // Get the series for the current Page

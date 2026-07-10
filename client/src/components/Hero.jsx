@@ -81,11 +81,7 @@ useEffect(() => {
                 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 border border-gray-600 group-hover:border-blue-400 transition-colors duration-500 flex items-center justify-center">
-                    <div className="w-8 h-8 bg-white group-hover:bg-blue-400 transition-colors duration-500"></div>
-                  </div>
-                </div>
+
                 <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="text-2xl font-light">{film.vote_average}</div>
                 </div>
